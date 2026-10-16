@@ -1,10 +1,18 @@
 # Squirrel Analysis Skill
 
-用于编写 [Squirrel](https://github.com/cracknuts-team/squirrel) 侧信道分析与轨迹预处理脚本的 Codex skill。技能会按任务读取对应的 API 文档和参考示例，再生成适配用户数据的 Python 脚本。
+用于编写 [Squirrel](https://github.com/cracknuts-team/squirrel) 侧信道分析与轨迹预处理脚本的通用 Agent Skill。支持 `SKILL.md` 的 Agent 可以直接加载；其他能够读取本地文件的 Agent 也可以按本文手动使用。技能会按任务读取对应的 API 文档和参考示例，再生成适配用户数据的 Python 脚本。
 
-## 使用
+## 如何使用
 
-将本仓库目录放入 Codex 的 skills 目录，以 `$squirrel-analysis` 调用；支持自动触发的环境也可直接描述 Squirrel 分析任务。运行生成的脚本仍需在 Python 环境中安装 Squirrel（发行包名 `cracknuts-squirrel`）及相应依赖。MIA 当前还需要 `pyitlib`。
+1. 克隆或下载**整个仓库目录**，保留 `SKILL.md` 与 `references/` 的相对位置。
+2. 如果 Agent 支持自动发现 Skills，将目录命名为 `squirrel-analysis` 并放入该 Agent 的技能目录。例如，OpenCode 可使用项目内的 `.opencode/skills/squirrel-analysis/` 或 `.agents/skills/squirrel-analysis/`；其他 Agent 按各自的技能目录规则放置。
+3. 向 Agent 描述任务、数据格式和目标。例如：
+
+   > 使用 squirrel-analysis 技能，为我的 Zarr 轨迹编写 CPA 分析脚本。轨迹和明文分别位于 `/0/0/traces` 与 `/0/0/plaintext`，输出每个密钥字节的最佳猜测和分数。
+
+如果 Agent 没有 Skill 自动发现功能，直接提供 `SKILL.md` 的路径，并要求它先读取该文件，再按其中的链接读取相关 API 文档和示例。不同 Agent 的显式调用命令可能不同，无需依赖 `$squirrel-analysis` 这一特定写法。
+
+运行生成的脚本仍需在 Python 环境中安装 Squirrel（发行包名 `cracknuts-squirrel`）及相应依赖。MIA 当前还需要 `pyitlib`。`agents/openai.yaml` 仅提供 OpenAI 产品的界面信息，其他 Agent 可忽略。
 
 ## 内容
 
