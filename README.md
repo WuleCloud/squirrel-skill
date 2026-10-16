@@ -12,7 +12,7 @@
 
 如果 Agent 没有 Skill 自动发现功能，直接提供 `SKILL.md` 的路径，并要求它先读取该文件，再按其中的链接读取相关 API 文档和示例。不同 Agent 的显式调用命令可能不同，无需依赖 `$squirrel-analysis` 这一特定写法。
 
-运行生成的脚本仍需在 Python 环境中安装 Squirrel（发行包名 `cracknuts-squirrel`）及相应依赖。MIA 当前还需要 `pyitlib`。`agents/openai.yaml` 仅提供 OpenAI 产品的界面信息，其他 Agent 可忽略。
+运行生成的脚本仍需在 Python 环境中安装 Squirrel（发行包名 `cracknuts-squirrel`）及相应依赖。MIA 当前还需要 `pyitlib`。
 
 ## 内容
 
