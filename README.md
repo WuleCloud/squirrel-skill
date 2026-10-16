@@ -22,7 +22,7 @@
 - [使用说明](references/usage.md)：Squirrel 项目环境与通用示例。
 - [参考示例](references/examples/)：从 Squirrel 验证流程整理的脚本，仅供理解调用方式；其中的路径和测试数据约定需要替换。
 
-文档与示例是 Squirrel 项目的本地快照。若安装版本的 API 与文档不同，应以当前安装包的公开 API 为准。
+若安装版本的 API 与文档不同，应以当前安装包的公开 API 为准。
 
 ## 来源与许可
 
